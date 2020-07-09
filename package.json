@@ -1,0 +1,23 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "dependencies": {
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "css": "tailwind build static/css/styles.css -o static/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhou1925/Food.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhou1925/Food/issues"
+  },
+  "homepage": "https://github.com/zhou1925/Food#readme"
+}
