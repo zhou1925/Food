@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load tailwind_filters %}
+{% block tetitle %}{% endblock tetitle %}
+        
+{% block content %}
+<div class="w-full max-w-xl mx-auto mb-10 ">
+    <form action="{% url 'food:edit-account' %}"
+    class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" 
+    method="POST">
+        {% csrf_token %}
+        {{ user_form|crispy }}
+        {{ restaurant|crispy }}
+        <button class="bg-gray-800 hover:bg-gray-900 
+        text-white font-bold py-2 px-4 rounded w-full" type="submit">Update</button>
+    </form>
+
+</div>
+        
+{% endblock content %}
