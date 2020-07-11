@@ -31,7 +31,7 @@ class Driver(models.Model):
     address = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.user.username
     
 class Meal(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE,
@@ -62,8 +62,11 @@ class Order(models.Model):
                                 related_name='order')
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE,
                                 related_name='order')
+    address = models.CharField(max_length=100)
+    total = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    picked_at = models.DateTimeField()
     status = models.CharField(max_length=20, choices=STATUSES, default='pending')
 
     def __str__(self):
@@ -71,3 +74,14 @@ class Order(models.Model):
     
     class Meta:
         ordering = ('-created',)
+
+class OrderDetail(models.Model):
+    order = models.ForeignKey("Order", on_delete=models.CASCADE,
+                            related_name='order_detail')
+    meal = models.ForeignKey("Meal", on_delete=models.CASCADE,
+                            related_name='order_detail')
+    quantity = models.IntegerField()
+    subtotal = models.IntegerField()
+
+    def __str__(self):
+        return str(self.id)

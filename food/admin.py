@@ -21,3 +21,7 @@ class RestaurantAdmin(admin.ModelAdmin):
 @admin.register(models.Order)
 class RestaurantAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(models.OrderDetail)
+class RestaurantAdmin(admin.ModelAdmin):
+    pass

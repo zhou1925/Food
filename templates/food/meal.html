@@ -33,6 +33,7 @@
           </thead>
           <tbody>
               
+              {% if meals %}
               {% for meal in meals %}
               <tr class="bg-white">
                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
@@ -54,6 +55,9 @@
                 </td>
               </tr>
               {% endfor %}
+              {% endif %}
+                
+
                   
 
 
