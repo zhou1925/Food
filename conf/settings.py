@@ -41,7 +41,7 @@ DJANGO_APPS = [
 
 LOCAL_APPS = ['food.apps.FoodConfig',]
 
-THIRD_APPS = ["crispy_forms", "crispy_tailwind",]
+THIRD_APPS = ["crispy_forms", "crispy_tailwind", 'rest_framework',]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_APPS
 
